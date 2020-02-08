@@ -1,9 +1,27 @@
 function mostrar()
 {
-//tomo la edad  
 var mesDelAño = document.getElementById('mes').value;
 
-//alert (mesDelAño);
+switch(mesDelAño){
+	case "Abril":
+		alert("Este mes tiene 30 dias");
+		break;
+	case "Junio":
+		alert("Este mes tiene 30 dias");
+		break;	
+	case "Septiembre":
+		alert("Este mes tiene 30 dias");
+		break;	
+	case "Noviembre":
+		alert("Este mes tiene 30 dias");
+		break;	
+	case "Febrero":
+		alert("Este mes tiene 29 dias");
+		break;	
+	default:
+		alert("Este mes tiene 31 dias");	
+}
+
 	
 	
 
