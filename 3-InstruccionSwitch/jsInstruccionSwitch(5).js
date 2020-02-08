@@ -1,7 +1,7 @@
 function mostrar()
 {
 var laHora = document.getElementById('hora').value;
-var laHora = parseInt(laHora);
+laHora = parseInt(laHora);
 switch(laHora){
 	case 7:
 		alert("Es de mañana.");
