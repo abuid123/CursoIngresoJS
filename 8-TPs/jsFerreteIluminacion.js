@@ -10,64 +10,67 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
-	var cantidad = document.getElementById('Cantidad').value;
-	cantidad = parseInt(cantidad);
-	var marca = document.getElementById('Marca').value;
-	var precio = 35;
-	var porcentajeDescuento;
-	var precioSinDescuento;
-	var precioConDescuento;
+	//Defino las variables
+	var cantidadDeLamparas;
+	var marca;
+	var precioBruto;
+	var descuento;
 	var precioFinal;
 
-	precioSinDescuento = precio*cantidad;
+	//Tomo las id y parseo las variables
+	cantidadDeLamparas = document.getElementById('Cantidad').value;
+	cantidadDeLamparas = parseInt(cantidadDeLamparas);
+	marca = document.getElementById('Marca').value;
 
-	if(cantidad > 5)
+	//Formula para saber el precio sin descuento
+	precioBruto = cantidadDeLamparas*35;
+
+	console.log(precioBruto);
+
+	//Formula para saber el precio con descuento
+	descuento=0;
+	if(cantidadDeLamparas > 5)
 	{
-		porcentajeDescuento = 50;
-	}
-	else
+		descuento = 50;
+	}else
 	{
-		if(cantidad==5)
-		{	
-			if (marca == "ArgentinaLuz") 
-			{
-				porcentajeDescuento = 40;
-			}else
-			{
-				porcentajeDescuento = 30;
-			}
-		}if(cantidad == 4)
+		if(cantidadDeLamparas == 5)
 		{
-			if(marca == "ArgentinaLuz" || "FelipeLamparas")
-			{	
-				porcentajeDescuento = 25;
+			if (marca == "ArgentinaLuz"){
+				descuento = 40;
 			}else
 			{
-				porcentajeDescuento = 20;
+				descuento = 30;
 			}
 		}else
 		{
-			if(cantidad == 3)
+			if (cantidadDeLamparas == 4)
 			{
-				if(marca == "ArgentinaLuz")
-				{
-					porcentajeDescuento = 15;
-					if(marca == "FelipeLamparas")
-					{
-						porcentajeDescuento = 10;
-					}
+				if (marca == "ArgentinaLuz" || marca =="FelipeLamparas"){
+					descuento = 25;
 				}else
 				{
-					porcentajeDescuento = 5;
+					descuento = 20;
+				}
+			}else
+			{
+				if (cantidadDeLamparas == 3)
+				{
+					if (marca == "ArgentinaLuz"){
+						descuento = 15;
+					}
+					if(marca == "FelipeLamparas")
+					{
+						descuento = 10;
+					}else
+					{
+						descuento = 5;
+					}
 				}
 			}
 		}
 	}
-	precioConDescuento=cantidad*precio*(porcentajeDescuento/100);
-	precioFinal = precioSinDescuento - precioConDescuento;
-	if(precioFinal > 120){
-		precioFinal = precioFinal*0,1;
-		alert(" ”Usted pago" +precioFinal+ "de IIBB.”, siendo" + precioFinal+ "el impuesto que se pagó. ");
-	}
-	document.getElementById('precioDescuento').value = precioFinal;
+	precioFinal = precioBruto - precioBruto * descuento/100;
+
+	console.info("precio final:",precioFinal);
 }
