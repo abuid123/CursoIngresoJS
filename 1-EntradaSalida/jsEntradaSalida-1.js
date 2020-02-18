@@ -4,6 +4,8 @@ function mostrar()
 //cambio
 
 	
-	alert("Esto funciona de maravilla");
+	var numero = "3";
+	var resultado = numero * numero;
+	console.log(resultado);
 }
 
