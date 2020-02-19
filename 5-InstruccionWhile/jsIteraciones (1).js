@@ -1,9 +1,9 @@
 function mostrar()
 {
-	var numero = 1;
-	while(numero < 11){
-		alert(numero);
+	var numero = 0;
+	while(numero < 10){
 		numero++;
+		console.log(numero);
 	}
 	
 
